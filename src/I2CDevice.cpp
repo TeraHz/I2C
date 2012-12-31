@@ -39,7 +39,7 @@ I2CDevice::I2CDevice(int bus, int address) {
 }
 
 I2CDevice::~I2CDevice() {
-	// TODO Auto-generated destructor stub
+
 }
 //! Read a single byte from I2C Bus
 /*!
@@ -62,7 +62,7 @@ uint8_t I2CDevice::read_byte(int fd, uint8_t address) {
 	return 0;
 
 }
-//! Write a single byte from PCA9685
+//! Write a single byte from a I2C Device
 /*!
  \param fd file descriptor for I/O
  \param address register address to write to
@@ -78,7 +78,7 @@ void I2CDevice::write_byte(int fd, uint8_t address, uint8_t data) {
 		syslog(LOG_DEBUG, "Wrote to I2C Slave 0x%x @ register 0x%x [0x%x]", _i2caddr, address, data);
 	}
 }
-//! Open device file for PCA9685 I2C bus
+//! Open device file for I2C Device
 /*!
  \return fd returns the file descriptor number or -1 on error
  */

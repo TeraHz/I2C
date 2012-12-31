@@ -39,6 +39,7 @@
 								<option id="gnu.cpp.compiler.option.debugging.level.2118893131" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.other.pic.422455567" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" value="true" valueType="boolean"/>
 								<option id="gnu.cpp.compiler.option.warnings.toerrors.1248451962" name="Warnings as errors (-Werror)" superClass="gnu.cpp.compiler.option.warnings.toerrors" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.debugging.gprof.187786735" superClass="gnu.cpp.compiler.option.debugging.gprof" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.368497304" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.294424285" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
@@ -46,7 +47,8 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1969822189" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
 								<option defaultValue="true" id="gnu.cpp.link.option.shared.1121663668" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" valueType="boolean"/>
-								<option id="gnu.cpp.link.option.soname.8564890" superClass="gnu.cpp.link.option.soname" value="libI2C.so.0" valueType="string"/>
+								<option id="gnu.cpp.link.option.soname.8564890" name="Shared object name (-Wl,-soname=)" superClass="gnu.cpp.link.option.soname" value="libI2C.so.0" valueType="string"/>
+								<option id="gnu.cpp.link.option.flags.1594520991" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-pg" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.788150597" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
