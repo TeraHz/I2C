@@ -28,7 +28,7 @@
 							<option id="cdt.managedbuild.option.gnu.cross.prefix.2080830639" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="arm-unknown-linux-gnueabi-" valueType="string"/>
 							<option id="cdt.managedbuild.option.gnu.cross.path.1804156624" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value="/home/terahz/x-tools6h/arm-unknown-linux-gnueabi/bin" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.735387731" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
-							<builder buildPath="${workspace_loc:/I2C}/src" id="cdt.managedbuild.builder.gnu.cross.969064695" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
+							<builder arguments="DISTPATH=/mnt/aquarius/lib" buildPath="${workspace_loc:/I2C}/src" command="make" id="cdt.managedbuild.builder.gnu.cross.969064695" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1094768682" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1274144166" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.debugging.level.2021615682" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
@@ -129,6 +129,9 @@
 			<resource resourceType="PROJECT" workspacePath="/I2C"/>
 		</configuration>
 		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/I2C"/>
+		</configuration>
+		<configuration configurationName="Makefile">
 			<resource resourceType="PROJECT" workspacePath="/I2C"/>
 		</configuration>
 	</storageModule>

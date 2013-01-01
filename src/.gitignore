@@ -1,4 +1,3 @@
-/I2C.o
-/libI2C.so
-/libI2C.so.0
-/libI2C.so.0.1
+/*.so
+/*.so*
+/*.o
