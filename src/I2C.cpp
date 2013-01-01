@@ -13,7 +13,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  *
- * Name        : I2CDevice.cpp
+ * Name        : I2C.cpp
  * Author      : Georgi Todorov
  * Version     :
  * Created on  : Dec 30, 2012
@@ -29,23 +29,23 @@
 #include <linux/i2c.h>
 #include <linux/i2c-dev.h>
 #include <syslog.h>		/* Syslog functionality */
-#include "I2CDevice.h"
+#include "I2C.h"
 
-I2CDevice::I2CDevice(int bus, int address) {
+I2C::I2C(int bus, int address) {
 	_i2cbus = bus;
 	_i2caddr = address;
 	snprintf(busfile, sizeof(busfile), "/dev/i2c-%d", bus);
 	openfd();
 }
 
-I2CDevice::~I2CDevice() {
+I2C::~I2C() {
 	close(fd);
 }
 //! Read a single byte from I2C Bus
 /*!
  \param address register address to read from
  */
-uint8_t I2CDevice::read_byte(uint8_t address) {
+uint8_t I2C::read_byte(uint8_t address) {
 	if (fd != -1) {
 		uint8_t buff[BUFFER_SIZE];
 		buff[0] = address;
@@ -75,7 +75,7 @@ uint8_t I2CDevice::read_byte(uint8_t address) {
  \param address register address to write to
  \param data 8 bit data to write
  */
-uint8_t I2CDevice::write_byte(uint8_t address, uint8_t data) {
+uint8_t I2C::write_byte(uint8_t address, uint8_t data) {
 	if (fd != -1 ) {
 		uint8_t buff[2];
 		buff[0] = address;
@@ -97,7 +97,7 @@ uint8_t I2CDevice::write_byte(uint8_t address, uint8_t data) {
 	return 0;
 }
 //! Open device file for I2C Device
-void I2CDevice::openfd() {
+void I2C::openfd() {
 	if ((fd = open(busfile, O_RDWR)) < 0) {
 		syslog(LOG_ERR, "Couldn't open I2C Bus %d [openfd():open %d]", _i2cbus,
 				errno);

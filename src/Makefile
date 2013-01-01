@@ -1,19 +1,24 @@
+INCLUDES := 
+LIBRARIES := 
+LIBS := 
+CXXFLAGS := -O3 -fPIC -g -Wall -Werror $(INCLUDES) $(LIBRARIES) $(LIBS)
 #CXX := g++
 CXX := arm-unknown-linux-gnueabi-g++
-CXXFLAGS := -fPIC -O3 -g -Wall -Werror -pg
 MAJOR := 0
 MINOR := 1
 NAME := I2C
 VERSION := $(MAJOR).$(MINOR)
+RM := rm -rf
 
+all: lib
 lib: lib$(NAME).so.$(VERSION) lib$(NAME).so
 
 lib$(NAME).so: lib$(NAME).so.$(VERSION)
 	ldconfig -v -n .
 	ln -s lib$(NAME).so.$(MAJOR) lib$(NAME).so
 
-lib$(NAME).so.$(VERSION): $(NAME)Device.o
-	$(CXX) $(CXXFLAGS) -shared -Wl,-soname,lib$(NAME).so.$(MAJOR) $^ -o $@
-
+lib$(NAME).so.$(VERSION): $(NAME).o
+	$(CXX) -pg -shared -Wl,-soname,lib$(NAME).so.$(MAJOR) $^ -o $@
+	
 clean:
-	$(RM)  *.o *.so*
+	$(RM) *.o *.so*
