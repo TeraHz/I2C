@@ -25,7 +25,7 @@
 #define I2CDEVICE_H_
 #include <inttypes.h>
 
-#define BUFFER_SIZE 0x08  //1 byte buffer
+#define BUFFER_SIZE 0x01  //1 byte buffer
 
 
 class I2CDevice {
@@ -33,13 +33,14 @@ public:
 	I2CDevice(int, int);
 	virtual ~I2CDevice();
 	uint8_t dataBuffer[BUFFER_SIZE];
-	uint8_t read_byte(int, uint8_t);
-	void write_byte(int, uint8_t, uint8_t);
-	int openfd();
+	uint8_t read_byte(uint8_t);
+	uint8_t write_byte(uint8_t, uint8_t);
 private:
 	int _i2caddr;
 	int _i2cbus;
+	void openfd();
 	char busfile[64];
+	int fd;
 };
 
 #endif /* I2CDEVICE_H_ */

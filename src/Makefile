@@ -9,11 +9,11 @@ VERSION := $(MAJOR).$(MINOR)
 lib: lib$(NAME).so.$(VERSION) lib$(NAME).so
 
 lib$(NAME).so: lib$(NAME).so.$(VERSION)
-        ldconfig -v -n .
-        ln -s lib$(NAME).so.$(MAJOR) lib$(NAME).so
+	ldconfig -v -n .
+	ln -s lib$(NAME).so.$(MAJOR) lib$(NAME).so
 
 lib$(NAME).so.$(VERSION): $(NAME)Device.o
-        $(CXX) $(CXXFLAGS) -shared -Wl,-soname,lib$(NAME).so.$(MAJOR) $^ -o $@
+	$(CXX) $(CXXFLAGS) -shared -Wl,-soname,lib$(NAME).so.$(MAJOR) $^ -o $@
 
 clean:
-        $(RM)  *.o *.so*
+	$(RM)  *.o *.so*
