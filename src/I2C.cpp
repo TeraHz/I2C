@@ -19,12 +19,15 @@
  * Created on  : Dec 30, 2012
  *
  * Copyright © 2012 Georgi Todorov  <terahz@geodar.com>
+ * github C
  */
 
 #include <sys/ioctl.h>
 #include <errno.h>
 #include <stdio.h>      /* Standard I/O functions */
 #include <fcntl.h>
+#include <conio.h>
+#include <math.h>
 #include <unistd.h>
 #include <linux/i2c.h>
 #include <linux/i2c-dev.h>
