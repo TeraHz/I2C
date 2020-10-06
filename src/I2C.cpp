@@ -26,6 +26,8 @@
 #include <errno.h>
 #include <stdio.h>      /* Standard I/O functions */
 #include <fcntl.h>
+#include <conio.h>
+#include <math.h>
 #include <unistd.h>
 #include <linux/i2c.h>
 #include <linux/i2c-dev.h>
